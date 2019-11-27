@@ -16,5 +16,86 @@ namespace lab8
         {
             InitializeComponent();
         }
+
+        public Form ReturnForm;
+        public bool ok = false, bs;
+        public int bn, rn;
+        public string dn;
+
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RouteNumTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)8) { }
+            else { e.Handled = true; }
+        }
+
+        private void BusNumTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar) || e.KeyChar == (char)8) { }
+            else { e.Handled = true; }
+        }
+
+        private void AddRouteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddElem_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.ReturnForm.Show();
+        }
+
+        private void CancelBut_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void DriverNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char[] nonLegitSigns = { ',', '?', ':', ';', '$', '#', '!', '@', '%', '"', '>', '|', '/' };
+            if (Char.IsDigit(e.KeyChar) || Array.IndexOf(nonLegitSigns, e.KeyChar) >= 0)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void OKBut_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(this.BusNumTextBox.Text) || String.IsNullOrWhiteSpace(this.routeNumTextBox.Text)
+                || String.IsNullOrWhiteSpace(this.DriverNameTextBox.Text) || (!this.InPark.Checked && !this.OnRoute.Checked))
+            {
+                MessageBox.Show("Заполните поля");
+            }
+            else
+            {
+                ok = Int32.TryParse(this.BusNumTextBox.Text, out bn);
+                if (ok)
+                {
+                    ok = Int32.TryParse(this.routeNumTextBox.Text, out rn);
+                }
+                dn = this.DriverNameTextBox.Text;
+                if (InPark.Checked)
+                {
+                    bs = true;
+                }
+                else
+                {
+                    bs = false;
+                }
+                if (!ok)
+                {
+                    MessageBox.Show("Ошибка.Повторите ввод");
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
+        }
     }
 }

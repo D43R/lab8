@@ -50,6 +50,7 @@
             this.CancelBut.TabIndex = 21;
             this.CancelBut.Text = "Отмена";
             this.CancelBut.UseVisualStyleBackColor = true;
+            this.CancelBut.Click += new System.EventHandler(this.CancelBut_Click_1);
             // 
             // OKBut
             // 
@@ -60,6 +61,7 @@
             this.OKBut.TabIndex = 20;
             this.OKBut.Text = "ОК";
             this.OKBut.UseVisualStyleBackColor = true;
+            this.OKBut.Click += new System.EventHandler(this.OKBut_Click);
             // 
             // OnRoute
             // 
@@ -91,6 +93,7 @@
             this.DriverNameTextBox.Name = "DriverNameTextBox";
             this.DriverNameTextBox.Size = new System.Drawing.Size(195, 20);
             this.DriverNameTextBox.TabIndex = 17;
+            this.DriverNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DriverNameTextBox_KeyPress);
             // 
             // BusNumTextBox
             // 
@@ -98,6 +101,7 @@
             this.BusNumTextBox.Name = "BusNumTextBox";
             this.BusNumTextBox.Size = new System.Drawing.Size(195, 20);
             this.BusNumTextBox.TabIndex = 16;
+            this.BusNumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BusNumTextBox_KeyPress);
             // 
             // routeNumTextBox
             // 
@@ -105,6 +109,7 @@
             this.routeNumTextBox.Name = "routeNumTextBox";
             this.routeNumTextBox.Size = new System.Drawing.Size(195, 20);
             this.routeNumTextBox.TabIndex = 15;
+            this.routeNumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RouteNumTextBox_KeyPress);
             // 
             // BusState
             // 
@@ -165,8 +170,12 @@
             this.Controls.Add(this.DriverNameLable);
             this.Controls.Add(this.BusNumLable);
             this.Controls.Add(this.RouteNumLable);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "AddElem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавить элемент";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddElem_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,9 +187,9 @@
         private System.Windows.Forms.Button OKBut;
         private System.Windows.Forms.RadioButton OnRoute;
         private System.Windows.Forms.RadioButton InPark;
-        private System.Windows.Forms.TextBox DriverNameTextBox;
-        private System.Windows.Forms.TextBox BusNumTextBox;
-        private System.Windows.Forms.TextBox routeNumTextBox;
+        public System.Windows.Forms.TextBox DriverNameTextBox;
+        public System.Windows.Forms.TextBox BusNumTextBox;
+        public System.Windows.Forms.TextBox routeNumTextBox;
         private System.Windows.Forms.Label BusState;
         private System.Windows.Forms.Label DriverNameLable;
         private System.Windows.Forms.Label BusNumLable;

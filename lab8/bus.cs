@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace lab8
 {
     [Serializable]
-    class bus
+    class bus : IComparable
     {
         public int routeNumber;
         public string driverName;
@@ -70,6 +70,21 @@ namespace lab8
         {
             get { return busStateString; }
         }
+        public int CompareTo(object o)
+        {
+            int k;
+        bus p = o as bus;
+        if (p != null)
+        {
+           k = this.routeNumber.CompareTo(p.routeNumber);
+           if(k == 0)
+             {
+                k = this.busNumber.CompareTo(p.busNumber);
+             }
+                return k;
+        }
+        else throw new Exception("Невозможно сравнить два объекта");
+    }
         public static bool operator < (bus c1, bus c2)
         {
             if (c1.routeNumber < c2.routeNumber)
