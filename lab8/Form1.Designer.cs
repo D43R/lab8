@@ -34,15 +34,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.SaveDBButton = new System.Windows.Forms.Button();
-            this.DBOutput = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditElem = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.DBOutput = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DBOutput)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenDBbutton
@@ -104,54 +101,6 @@
             this.SaveDBButton.UseVisualStyleBackColor = true;
             this.SaveDBButton.Click += new System.EventHandler(this.SaveDBButton_Click);
             // 
-            // DBOutput
-            // 
-            this.DBOutput.FormattingEnabled = true;
-            this.DBOutput.Location = new System.Drawing.Point(12, 31);
-            this.DBOutput.Name = "DBOutput";
-            this.DBOutput.Size = new System.Drawing.Size(530, 407);
-            this.DBOutput.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Номер маршрута";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(134, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 16);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Номер автобуса";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(256, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "ФИО водителя";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(366, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 16);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "В парке/на маршруте";
-            // 
             // DeleteButton
             // 
             this.DeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -176,18 +125,23 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // DBOutput
+            // 
+            this.DBOutput.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.DBOutput.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DBOutput.Location = new System.Drawing.Point(10, 12);
+            this.DBOutput.Name = "DBOutput";
+            this.DBOutput.Size = new System.Drawing.Size(532, 426);
+            this.DBOutput.TabIndex = 14;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DBOutput);
             this.Controls.Add(this.EditElem);
             this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.DBOutput);
             this.Controls.Add(this.SaveDBButton);
             this.Controls.Add(this.SearchLabel);
             this.Controls.Add(this.textBox1);
@@ -198,6 +152,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "База данных";
+            ((System.ComponentModel.ISupportInitialize)(this.DBOutput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,15 +166,11 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.Button SaveDBButton;
-        private System.Windows.Forms.ListBox DBOutput;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditElem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.DataGridView DBOutput;
     }
 }
 
