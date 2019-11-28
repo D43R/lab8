@@ -55,9 +55,7 @@ namespace lab8
             {
                 try
                 {
-                    FileStream f1 = new FileStream(OPF.FileName, FileMode.Open);
-                    mainList = (List<bus>)bf.Deserialize(f1);
-                    f1.Close();
+                    Deserialization(OPF.FileName);
                 }
                 catch
                 {
@@ -68,6 +66,13 @@ namespace lab8
             GetItemsFromList(mainList);
         }
 
+        private void Deserialization(string filename)
+        {
+            FileStream f1 = new FileStream(filename, FileMode.Open);
+            mainList = (List<bus>)bf.Deserialize(f1);
+            f1.Close();
+        }
+
         private void SaveDBButton_Click(object sender, EventArgs e)
         {
             SaveFileDialog SFD = new SaveFileDialog();
@@ -75,11 +80,15 @@ namespace lab8
             
             if (SFD.ShowDialog() == DialogResult.OK)
             {
-                FileStream f2 = new FileStream(SFD.FileName, FileMode.Create);
-                bf.Serialize(f2, mainList);
-                MessageBox.Show("Файл сохранен");
-                f2.Close();
+                SerializeAndSave(SFD.FileName);
             }
+        }
+        private void SerializeAndSave(string filename)
+        {
+            FileStream f2 = new FileStream(filename, FileMode.Create);
+            bf.Serialize(f2, mainList);
+            MessageBox.Show("Файл сохранен");
+            f2.Close();
         }
 
         private void AddItemButton_Click(object sender, EventArgs e)
