@@ -99,10 +99,17 @@ namespace lab8
             a.ShowDialog();
             if (a.ok)
             {
-                bus pazik = new bus(a.rn, a.dn, a.bn, a.bs);
-                mainList.Add(pazik);
-                DBOutput.Rows.Clear();
-                GetItemsFromList(mainList);
+                if (!SearchFunc(a.bn.ToString()))
+                    { 
+                    bus pazik = new bus(a.rn, a.dn, a.bn, a.bs);
+                    mainList.Add(pazik);
+                    DBOutput.Rows.Clear();
+                    GetItemsFromList(mainList);
+                }
+                else
+                {
+                    MessageBox.Show("Автобус с таким номером уже существует.");
+                }
             }
         }
 
@@ -148,16 +155,21 @@ namespace lab8
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < DBOutput.RowCount; i++)
+            //for (int i = 0; i < DBOutput.RowCount; i++)
+            //{
+            //    if (DBOutput[1, i].FormattedValue.ToString().
+            //        Contains(this.SearchOrDeleteTextBox.Text.Trim()))
+            //    {
+            //        DBOutput.CurrentCell = DBOutput[0, i];
+            //        return;
+            //    }
+            //}
+            //MessageBox.Show("Элемент не найден");
+            bool ok = SearchFunc(this.SearchOrDeleteTextBox.Text.Trim());
+            if (!ok)
             {
-                if (DBOutput[1, i].FormattedValue.ToString().
-                    Contains(this.SearchOrDeleteTextBox.Text.Trim()))
-                {
-                    DBOutput.CurrentCell = DBOutput[0, i];
-                    return;
-                }
+                MessageBox.Show("Элемент не найден");
             }
-            MessageBox.Show("Элемент не найден");
         }
 
         private void SearchOrDeleteTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,5 +199,22 @@ namespace lab8
             }
             else { MessageBox.Show("Заполните поле"); }
         }
+        private bool SearchFunc(string busnum)
+        {
+            bool ok;
+            for (int i = 0; i < DBOutput.RowCount; i++)
+            {
+                if (DBOutput[1, i].FormattedValue.ToString().
+                    Contains(busnum))
+                {
+                    DBOutput.CurrentCell = DBOutput[0, i];
+                    ok = true;
+                    return ok;
+                }
+            }
+            ok = false;
+            return ok;
+        }
     }
 }
+

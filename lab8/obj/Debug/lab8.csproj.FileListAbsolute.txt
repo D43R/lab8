@@ -20,3 +20,14 @@ C:\Users\Вадим\Source\Repos\D43R\lab8\lab8\obj\Debug\lab8.csproj.GenerateRe
 C:\Users\Вадим\Source\Repos\D43R\lab8\lab8\obj\Debug\lab8.csproj.CoreCompileInputs.cache
 C:\Users\Вадим\Source\Repos\D43R\lab8\lab8\obj\Debug\lab8.exe
 C:\Users\Вадим\Source\Repos\D43R\lab8\lab8\obj\Debug\lab8.pdb
+E:\lab8\lab8\bin\Debug\lab8.exe.config
+E:\lab8\lab8\obj\Debug\lab8.exe
+E:\lab8\lab8\obj\Debug\lab8.pdb
+E:\lab8\lab8\bin\Debug\lab8.exe
+E:\lab8\lab8\bin\Debug\lab8.pdb
+E:\lab8\lab8\obj\Debug\lab8.AddElem.resources
+E:\lab8\lab8\obj\Debug\lab8.MainForm.resources
+E:\lab8\lab8\obj\Debug\lab8.Properties.Resources.resources
+E:\lab8\lab8\obj\Debug\lab8.csproj.GenerateResource.Cache
+E:\lab8\lab8\obj\Debug\lab8.csprojAssemblyReference.cache
+E:\lab8\lab8\obj\Debug\lab8.csproj.CoreCompileInputs.cache

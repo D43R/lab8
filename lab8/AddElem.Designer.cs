@@ -39,6 +39,7 @@
             this.DriverNameLable = new System.Windows.Forms.Label();
             this.BusNumLable = new System.Windows.Forms.Label();
             this.RouteNumLable = new System.Windows.Forms.Label();
+            this.AddRandomElement = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CancelBut
@@ -154,11 +155,23 @@
             this.RouteNumLable.TabIndex = 11;
             this.RouteNumLable.Text = "Номер маршрута";
             // 
+            // AddRandomElement
+            // 
+            this.AddRandomElement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AddRandomElement.Location = new System.Drawing.Point(108, 122);
+            this.AddRandomElement.Name = "AddRandomElement";
+            this.AddRandomElement.Size = new System.Drawing.Size(156, 32);
+            this.AddRandomElement.TabIndex = 22;
+            this.AddRandomElement.Text = "Случайный элемент";
+            this.AddRandomElement.UseVisualStyleBackColor = true;
+            this.AddRandomElement.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // AddElem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 163);
+            this.Controls.Add(this.AddRandomElement);
             this.Controls.Add(this.CancelBut);
             this.Controls.Add(this.OKBut);
             this.Controls.Add(this.OnRoute);
@@ -194,5 +207,6 @@
         private System.Windows.Forms.Label DriverNameLable;
         private System.Windows.Forms.Label BusNumLable;
         private System.Windows.Forms.Label RouteNumLable;
+        private System.Windows.Forms.Button AddRandomElement;
     }
 }

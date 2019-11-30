@@ -16,7 +16,7 @@ namespace lab8
         {
             InitializeComponent();
         }
-
+        Random rand = new Random();
         public Form ReturnForm;
         public bool ok = false, bs;
         public int bn, rn;
@@ -52,6 +52,17 @@ namespace lab8
 
         private void CancelBut_Click_1(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string[] names = { "Джимми Гокинс", "Бен Ганн", "Слепой Пью", "Джон Сильвер", "Черный Пес", "Сквайр Трелони", "Доктор Ливси" };
+            dn = names[rand.Next(0, names.Length)];
+            bn = rand.Next(1, 1000);
+            rn = rand.Next(1, 1000);
+            bs = Convert.ToBoolean(rand.Next(-1, 1));
+            ok = true;
             this.Close();
         }
 
